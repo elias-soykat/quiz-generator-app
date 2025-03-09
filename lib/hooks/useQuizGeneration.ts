@@ -1,4 +1,4 @@
-import { Question, questionsSchema } from "@/lib/schemas";
+import { QuestionSchema, questionsSchema } from "@/lib/schemas";
 import { experimental_useObject } from "@ai-sdk/react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -9,8 +9,8 @@ interface UseQuizGenerationOptions {
 }
 
 interface UseQuizGenerationReturn {
-  questions: Question[];
-  partialQuestions: Question[] | undefined;
+  questions: QuestionSchema[];
+  partialQuestions: QuestionSchema[] | undefined;
   isLoading: boolean;
   title: string | undefined;
   setTitle: (title: string) => void;
@@ -22,7 +22,7 @@ interface UseQuizGenerationReturn {
 export function useQuizGeneration({
   apiEndpoint,
 }: UseQuizGenerationOptions): UseQuizGenerationReturn {
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuestionSchema[]>([]);
   const [title, setTitle] = useState<string>();
 
   const {
@@ -53,7 +53,7 @@ export function useQuizGeneration({
 
   return {
     questions,
-    partialQuestions: partialQuestions as Question[] | undefined,
+    partialQuestions: partialQuestions as QuestionSchema[] | undefined,
     isLoading,
     title,
     setTitle,

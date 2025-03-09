@@ -1,8 +1,8 @@
 "use client";
 
 import DragDropZone from "@/components/drag-drop-zone";
+import Quiz from "@/components/multiple-quiz/multiple-quiz";
 import PDFUploader from "@/components/pdf-uploader";
-import Quiz from "@/components/quiz";
 import QuizGenerationProgress from "@/components/quiz-generation-progress";
 import { Button } from "@/components/ui/button";
 import {

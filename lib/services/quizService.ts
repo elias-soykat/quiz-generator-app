@@ -1,5 +1,5 @@
 import { generateQuizTitle as fetchQuizTitle } from "@/app/(preview)/actions";
-import { Question } from "@/lib/schemas";
+import { QuestionSchema } from "@/lib/schemas";
 import { FileData } from "./fileService";
 
 export interface QuizService {
@@ -12,13 +12,13 @@ export interface QuizService {
 export class APIQuizService implements QuizService {
   private readonly apiEndpoint: string;
   private onError: (error: Error) => void;
-  private onProgress: (questions: Question[]) => void;
-  private onFinish: (questions: Question[]) => void;
+  private onProgress: (questions: QuestionSchema[]) => void;
+  private onFinish: (questions: QuestionSchema[]) => void;
 
   constructor(
     apiEndpoint: string,
-    onProgress: (questions: Question[]) => void,
-    onFinish: (questions: Question[]) => void,
+    onProgress: (questions: QuestionSchema[]) => void,
+    onFinish: (questions: QuestionSchema[]) => void,
     onError: (error: Error) => void
   ) {
     this.apiEndpoint = apiEndpoint;

@@ -4,10 +4,9 @@ import { QuestionSchema } from "@/lib/schemas";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, FileText, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
-import QuestionCard from "./question-card";
-import QuizReview from "./quiz-overview";
-import QuizScore from "./score";
-
+import QuizReview from "../quiz-overview";
+import QuizScore from "../score";
+import QuestionCard from "./quiz-question-card";
 
 type QuizProps = {
   questions: QuestionSchema[];
