@@ -1,12 +1,12 @@
 import { FileUp } from "lucide-react";
 import React from "react";
 
-interface PDFUploaderProps {
+type PDFUploaderProps = {
   onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   files: File[];
-}
+};
 
-export function PDFUploader({ onFileChange, files }: PDFUploaderProps) {
+export default function PDFUploader({ onFileChange, files }: PDFUploaderProps) {
   return (
     <div
       className={`relative flex flex-col items-center justify-center border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 transition-colors hover:border-muted-foreground/50`}

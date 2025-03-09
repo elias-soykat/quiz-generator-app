@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 
-interface DragDropZoneProps {
+type DragDropZoneProps = {
   isDragging: boolean;
   onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
   onDragExit: () => void;
@@ -9,9 +9,9 @@ interface DragDropZoneProps {
   onDragLeave: () => void;
   onDrop: (e: React.DragEvent<HTMLDivElement>) => void;
   children: React.ReactNode;
-}
+};
 
-export function DragDropZone({
+export default function DragDropZone({
   isDragging,
   onDragOver,
   onDragExit,

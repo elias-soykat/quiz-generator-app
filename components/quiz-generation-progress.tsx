@@ -1,13 +1,13 @@
-import { Progress } from "@/components/ui/progress";
-import { Question } from "@/lib/schemas";
+import { QuestionSchema } from "@/lib/schemas";
+import { Progress } from "./ui/progress";
 
-interface QuizGenerationProgressProps {
+type QuizGenerationProgressProps = {
   isLoading: boolean;
   progress: number;
-  partialQuestions: Question[] | undefined;
-}
+  partialQuestions: QuestionSchema[] | undefined;
+};
 
-export function QuizGenerationProgress({
+export default function QuizGenerationProgress({
   isLoading,
   progress,
   partialQuestions,

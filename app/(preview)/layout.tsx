@@ -1,15 +1,16 @@
-import "./globals.css";
 import { Metadata } from "next";
-import { Toaster } from "sonner";
 import { ThemeProvider } from "next-themes";
-import { Geist } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Toaster } from "sonner";
+import "./globals.css";
 
-const geist = Geist({ subsets: ["latin"] });
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ai-sdk-preview-pdf-support.vercel.app"),
-  title: "PDF Support Preview",
-  description: "Experimental preview of PDF support with the AI SDK",
+  title: "Quiz Flow",
+  description:
+    "Quiz Flow is a tool that allows you to create multiple quizzes from your PDF files.",
 };
 
 export default function RootLayout({
@@ -18,7 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geist.className}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${plusJakartaSans.className} ${inter.className}`}
+    >
       <body>
         <ThemeProvider attribute="class" enableSystem forcedTheme="dark">
           <Toaster position="top-center" richColors />
